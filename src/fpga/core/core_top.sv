@@ -1018,8 +1018,8 @@ synch_3 #(
     clk_sys
 );
 
-assign p1_key_s = swap_controllers ? cont2_key_s : cont1_key_s;
-assign p2_key_s = swap_controllers ? cont1_key_s : cont2_key_s;
+assign p1_key_s = swap_controllers ? cont1_key_s | cont2_key_s : cont1_key_s;
+assign p2_key_s = cont2_key_s;
 
 assign joystick_0 = {
     p1_key_s[9],  // Z
